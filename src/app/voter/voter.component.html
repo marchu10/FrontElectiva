@@ -1,0 +1,29 @@
+<!--ESTO NO FORMA PARTE DE LA APP-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="nov1">Voto Online</h1>
+      <button
+        class="btn btn-primary"
+        [disabled]="desabilitar"
+        (click)="agregarPersona()"
+      >
+        agregar persona
+      </button>
+      <p *ngIf="mostrar; else noMostrar">{{ mensaje }} con el título de {{titulo}}</p>
+      <ng-template #noMostrar>
+        <p>No se ha agregano ninguna persona</p>
+      </ng-template>
+      <app-voters></app-voters>
+      <label> Título persona</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="titulo"
+      />
+      {{ titulo }}
+    </div>
+  </div>
+</div>
+<br>
+
